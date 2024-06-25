@@ -12,7 +12,7 @@ start-octez.sh
 start-tezpay.sh
 
 # What follows is only relevant in case of ongoing protocol change (see section "Upgrade octez"). 
-. `which tezos-env.sh`
+#. `which tezos-env.sh` - make sure to source the tezos environment variables
 
 BAKER_LOG_FILE_FORMER="/var/log/octez-baker-${PROTOCOL_FORMER}.log"
 ACCUSER_LOG_FILE_FORMER="/var/log/octez-accuser-${PROTOCOL_FORMER}.log"
@@ -26,7 +26,7 @@ nohup octez-accuser-${PROTOCOL_FORMER} --base-dir $CLIENT_BASE_DIR --endpoint ht
 
 install-tezos-baker.sh
 
-. `which tezos-env.sh`
+#. `which tezos-env.sh` - make sure to source the tezos environment variables
 
 stop-tezpay.sh
 stop-octez.sh
@@ -72,7 +72,7 @@ start-tezpay.sh
 # Stake management
 ###################
 
-. `which tezos-env.sh`
+#. `which tezos-env.sh` - make sure to source the tezos environment variables
 
 # Change your staking parameters, LLL being 0 and 5, EEE being between 0 and 1
 octez-client --base-dir $CLIENT_BASE_DIR --endpoint http://${NODE_RPC_ADDR} set delegate parameters for $KEY_BAKER --limit-of-staking-over-baking $BAKER_LIMIT_STAKING_OVER_BAKING --edge-of-baking-over-staking $BAKER_EDGE_BAKING_OVER_STAKING
@@ -89,7 +89,7 @@ octez-client --base-dir $CLIENT_BASE_DIR --endpoint http://${NODE_RPC_ADDR} tran
 # Voting process
 #################
 
-. `which tezos-env.sh`
+#. `which tezos-env.sh` - make sure to source the tezos environment variables
 
 octez-client --base-dir $CLIENT_BASE_DIR --endpoint http://${NODE_RPC_ADDR} show voting period
 octez-client --base-dir $CLIENT_BASE_DIR --endpoint http://${NODE_RPC_ADDR} submit proposals for $KEY_BAKER <proposal1> <proposal2> ...

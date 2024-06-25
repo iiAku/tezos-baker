@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `which tezos-env.sh`
+#. `which tezos-env.sh` - make sure to source the tezos environment variables
 
 rm $NODE_LOG_FILE
 
